@@ -34,6 +34,8 @@ namespace Academico.Controllers
             instituicao.Id = instituicoes.Select(i => i.Id).Max() + 1;
             instituicoes.Add(instituicao);
             return RedirectToAction("Index");
+
+
         }
     }
 }
