@@ -9,6 +9,8 @@ namespace Academico.Data
         {
         }
         public DbSet<Instituicao> Instituicoes { get; set; }
+        public DbSet<Departamento> Departamento { get; set; }
+
 
     }
 }

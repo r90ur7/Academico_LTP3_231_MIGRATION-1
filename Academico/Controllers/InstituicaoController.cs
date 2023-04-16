@@ -59,7 +59,7 @@ namespace Academico.Controllers
             {
                 return NotFound();
             }
-            var instituicao = await _context.Instituicoes.SingleOrDefaultAsync(id => i.Id == id);
+            var instituicao = await _context.Instituicoes.SingleOrDefaultAsync(i => i.Id == id);
             if (instituicao == null)
             {
                 return NotFound();
@@ -120,7 +120,7 @@ namespace Academico.Controllers
             {
                 return NotFound();
             }
-            var instituicao = await _context.Instituicoes.SingleOrDefaultAsync(i => i.Id == Id);
+            var instituicao = await _context.Instituicoes.SingleOrDefaultAsync(i => i.Id == id);
             if(instituicao == null)
             {
                 return NotFound();
@@ -129,19 +129,6 @@ namespace Academico.Controllers
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-
-        public async Task<ActionResult> DeleteConfirmed(long? id)
-        {
-            var instituicao = await _context.Instituicoes.SingleOrDefaultAsync(i => i.Id == Id);
-            if (instituicao == null)
-            {
-                return NotFound();
-            }
-            return View(instituicao);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        [AutoValidateAntiforgeryToken]
 
         public async Task<ActionResult> DeleteConfirmed(long? id)
         {
